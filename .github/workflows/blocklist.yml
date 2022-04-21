@@ -22,12 +22,17 @@ jobs:
       - name: build blocklist
         run: python3 listGenerator.py
         
-      - name: upload as release
-        uses: Hs1r1us/Release-AIO@v1.0
+      - name: update tag
+        uses: richardsimko/update-tag@v1
+        with:
+          tag_name: latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: upload as release
+        uses: softprops/action-gh-release@v1
         with:
-          tag_name: "rolling"
-          release_name: "rolling release"
-          asset_files: "blocklist.txt"
           prerelease: false
+          name: latest
+          tag_name: latest
+          files: "blocklist.txt"
