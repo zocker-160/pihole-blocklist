@@ -24,9 +24,10 @@ jobs:
         
       - name: upload as release
         uses: Hs1r1us/Release-AIO@v1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: "rolling"
           release_name: "rolling release"
           asset_files: "blocklist.txt"
           prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
