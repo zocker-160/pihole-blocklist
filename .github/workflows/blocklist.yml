@@ -23,7 +23,9 @@ jobs:
         run: python3 listGenerator.py
         
       - name: upload as release
-        uses: ncipollo/release-action@v1
+        uses: Hs1r1us/Release-AIO@v1.0
         with:
-          artifacts: "blocklist.txt"
-          token: ${{ secrets.GITHUB_TOKEN }}
+          tag_name: "rolling"
+          release_name: "rolling release"
+          asset_files: "blocklist.txt"
+          prerelease: false
