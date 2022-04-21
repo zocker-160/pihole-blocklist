@@ -22,13 +22,8 @@ jobs:
       - name: build blocklist
         run: python3 listGenerator.py
         
-      - name: setup git config
-        run: |
-          git config user.name "Blocklist Updater Bot"
-          git config user.mail "<>"
-          
-      - name: commit new blocklist
-        run: |
-          git add blocklist.txt
-          git commit -m "update blocklist"
-          git push origin master
+      - name: upload as release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "blocklist.txt"
+          token: ${{ secrets.GITHUB_TOKEN }}
