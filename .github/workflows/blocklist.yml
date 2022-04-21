@@ -29,3 +29,4 @@ jobs:
           release_name: "rolling release"
           asset_files: "blocklist.txt"
           prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
