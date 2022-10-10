@@ -1,10 +1,11 @@
 #! /usr/bin/env python3
 
-import time
 import requests
 
 SOURCE_FILE = "sources.list"
 DST_FILE = "blocklist.txt"
+
+listOfShame = list()
 
 dst = open(DST_FILE, "w")
 
@@ -36,6 +37,11 @@ with open(SOURCE_FILE, "r") as src:
 
         else:
             print("downloading data failed with code:", stCode)
-            time.sleep(1)
+            listOfShame.append( (stCode, line) )
 
 dst.close()
+
+if len(listOfShame) > 0:
+    print("following URLs could not be fetched:")
+    for item in listOfShame:
+        print(item)
