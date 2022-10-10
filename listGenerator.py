@@ -19,7 +19,7 @@ with open(SOURCE_FILE, "r") as src:
         print("---")
         print("requesting data from:", line)
         data = requests.get(line, allow_redirects=True, timeout=5)
-        
+
         if stCode := data.status_code == 200:
             print("data downloaded ", end="")
 
