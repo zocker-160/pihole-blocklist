@@ -33,6 +33,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           prerelease: false
-          name: latest
+          name: nightly
           tag_name: latest
           files: "blocklist.txt"
