@@ -11,10 +11,9 @@ dst = open(DST_FILE, "w")
 
 with open(SOURCE_FILE, "r") as src:
     for line in src:
-        if line.startswith("#"):
-            continue
-
         line = line.strip()
+        if len(line) == 0 or line.startswith("#"):
+            continue
 
         print("---")
         print("requesting data from:", line)
