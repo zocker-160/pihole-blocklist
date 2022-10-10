@@ -1,4 +1,4 @@
-# main lists
+# Main Lists
 https://hosts.oisd.nl/
 https://adaway.org/hosts.txt
 https://hostsmobile.oisd.nl/
@@ -96,3 +96,7 @@ https://www.github.developerdan.com/hosts/lists/tracking-aggressive-extended.txt
 https://github.com/Ultimate-Hosts-Blacklist/Ultimate.Hosts.Blacklist/raw/master/domains/domains0.list
 https://github.com/Ultimate-Hosts-Blacklist/Ultimate.Hosts.Blacklist/raw/master/domains/domains1.list
 https://github.com/Ultimate-Hosts-Blacklist/Ultimate.Hosts.Blacklist/raw/master/domains/domains2.list
+# Misc
+https://raw.githubusercontent.com/pitron82/blocklist/master/fingerprintblock.txt
+https://raw.githubusercontent.com/pitron82/blocklist/master/list.txt
+https://raw.githubusercontent.com/pitron82/blocklist/master/serverblocklist.txt
