@@ -46,14 +46,18 @@ https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/malware
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/MS-Office-Telemetry
 # Fireblog
 https://v.firebog.net/hosts/static/w3kbl.txt
-https://v.firebog.net/hosts/neohostsbasic.txt
 https://v.firebog.net/hosts/AdguardDNS.txt
 https://v.firebog.net/hosts/Admiral.txt
 https://v.firebog.net/hosts/Easylist.txt
 https://v.firebog.net/hosts/Easyprivacy.txt
+https://v.firebog.net/hosts/Kowabit.txt
 https://v.firebog.net/hosts/Prigent-Ads.txt
-https://v.firebog.net/hosts/Prigent-Malware.txt
+https://v.firebog.net/hosts/Prigent-Adult.txt
 https://v.firebog.net/hosts/Prigent-Crypto.txt
+https://v.firebog.net/hosts/Prigent-Malware.txt
+https://v.firebog.net/hosts/RPiList-Malware.txt
+https://v.firebog.net/hosts/RPiList-Phishing.txt
+https://v.firebog.net/hosts/neohostsbasic.txt
 # Dev Dan
 https://www.github.developerdan.com/hosts/lists/facebook-extended.txt
 https://www.github.developerdan.com/hosts/lists/amp-hosts-extended.txt
