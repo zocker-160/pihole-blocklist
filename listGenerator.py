@@ -29,6 +29,9 @@ with open(SOURCE_FILE, "r") as src:
                     if not url or url.startswith("#"):
                         continue
 
+                    if "]" in url or "@" in url:
+                        continue
+
                     if url.startswith("0.0.0.0"):
                         url = url.split()[-1].strip()
 
