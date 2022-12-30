@@ -7,9 +7,7 @@ DST_FILE = "blocklist.txt"
 
 listOfShame = list()
 
-dst = open(DST_FILE, "w")
-
-with open(SOURCE_FILE, "r") as src:
+with open(SOURCE_FILE, "r") as src, open(DST_FILE, "w") as dst:
     for line in src:
         line = line.strip()
         if len(line) == 0 or line.startswith("#"):
@@ -40,8 +38,6 @@ with open(SOURCE_FILE, "r") as src:
         else:
             print("downloading data failed with code:", stCode)
             listOfShame.append( (stCode, line) )
-
-dst.close()
 
 if len(listOfShame) > 0:
     print("following URLs could not be fetched:")
