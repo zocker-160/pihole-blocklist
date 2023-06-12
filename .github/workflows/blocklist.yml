@@ -17,18 +17,18 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: install dependencies
-        run: pip3 install -U requests
+        run: pip3 install -r requirements.txt
 
       - name: build blocklist
         run: python3 listGenerator.py
-        
+
       - name: update tag
         uses: richardsimko/update-tag@v1
         with:
           tag_name: latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
+
       - name: upload as release
         uses: softprops/action-gh-release@v1
         with:
