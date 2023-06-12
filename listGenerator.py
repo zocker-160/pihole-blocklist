@@ -1,14 +1,28 @@
 #! /usr/bin/env python3
 
+import re
 import requests
 
 SOURCE_FILE = "sources.list"
 DST_FILE = "blocklist.txt"
+DST_FILE_UNF = "blocklistunfiltered.txt"
 
 resultSet = set()
 listOfShame = list()
 
-with open(SOURCE_FILE, "r") as src:
+DOMAIN_REG = r"^(\S+\.)*\S+\.[a-zA-Z]{2,}$"
+
+def isLocalhostSplit(line: str) -> bool:
+    locIPs = [
+        "0.0.0.0 ",
+        "127.0.0.1 "
+        "::1 "
+    ]
+
+    return any([line.startswith(x) for x in locIPs])
+
+
+with open(SOURCE_FILE, "r") as src, open(DST_FILE_UNF, "w") as dstUnf:
     for line in src:
         line = line.strip()
         if len(line) == 0 or line.startswith("#"):
@@ -29,16 +43,36 @@ with open(SOURCE_FILE, "r") as src:
             print("analyzing...")
 
             for url in respData.splitlines():
-                if not url or url.startswith("#"):
+                if not url:
                     continue
+
+                url = url.strip()
+
+                dstUnf.write(url + "\n")
+
+                if url.startswith("#"):
+                    continue
+
+                # filter entries like "||abandonedclover.com^"
+                if url.startswith("||"):
+                    url = url[2:]
+
+                if url.endswith("^"):
+                    url = url[:-1]
 
                 if any([x in url for x in ["]", "@", "/"]]):
                     continue
 
-                if url.startswith("0.0.0.0 "):
-                    url = url.split()[-1].strip()
+                if isLocalhostSplit(url):
+                    url = url.split()[1]
 
-                if url == "0.0.0.0":
+                if " " in url:
+                    url = url.split()[0]
+
+                if "\t" in url:
+                    url = url.split("\t")[0].strip()
+
+                if not re.match(DOMAIN_REG, url):
                     continue
 
                 resultSet.add(url)
