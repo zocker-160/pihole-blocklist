@@ -1,4 +1,4 @@
-name: Update combined blocklist
+name: blocklist update
 
 on:
   push:
