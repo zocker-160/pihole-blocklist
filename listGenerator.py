@@ -32,10 +32,11 @@ with open(SOURCE_FILE, "r") as src, open(DST_FILE_UNF, "w") as dstUnf:
         print("downloading:", line)
         data = requests.get(line, allow_redirects=True, timeout=5)
 
-        if retCode := data.status_code != 200:
+        retCode = data.status_code
+        if retCode != 200:
             print("downloading failed with:", retCode)
             listOfShame.append( (retCode, line) )
-            continue            
+            continue
 
         print("data downloaded", "| ", end="")
 
