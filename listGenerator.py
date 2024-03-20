@@ -51,7 +51,11 @@ with open(SOURCE_FILE, "r") as src, open(DST_FILE_UNF, "w") as dstUnf:
 
                 dstUnf.write(url + "\n")
 
+                # comment
                 if url.startswith("#"):
+                    continue
+                # ABP list comment
+                if url.startswith("!"):
                     continue
 
                 # filter entries like "||abandonedclover.com^"
@@ -61,7 +65,7 @@ with open(SOURCE_FILE, "r") as src, open(DST_FILE_UNF, "w") as dstUnf:
                 if url.endswith("^"):
                     url = url[:-1]
 
-                if any([x in url for x in ["]", "@", "/", "\\"]]):
+                if any([x in url for x in ["[", "]", "@", "/", "\\"]]):
                     continue
 
                 if isLocalhostSplit(url):
