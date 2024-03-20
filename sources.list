@@ -1,7 +1,7 @@
 # Main Lists
-https://hosts.oisd.nl/
+https://big.oisd.nl
+https://nsfw.oisd.nl/
 https://adaway.org/hosts.txt
-https://hostsmobile.oisd.nl/
 https://someonewhocares.org/hosts/hosts
 https://someonewhocares.org/hosts/ipv6/hosts
 https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
@@ -158,5 +158,4 @@ https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt
 https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt
 https://urlhaus.abuse.ch/downloads/hostfile/
 
-https://dbl.oisd.nl/
 https://v.firebog.net/hosts/static/w3kbl.txt
